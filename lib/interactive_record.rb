@@ -54,7 +54,8 @@ class InteractiveRecord
   end
   
   def self.find_by(option)
-    DB[:conn].execute(option).to_s
+    sql = "SELECT * FROM #{self.table_option} WHERE option = '#{option}'"
+    DB[:conn].execute(sql)
   end
 
   
