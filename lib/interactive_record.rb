@@ -54,7 +54,7 @@ class InteractiveRecord
   end
   
   def self.find_by(option)
-    DB[:conn].execute(option)
+    DB[:conn].execute(option).to_s
   end
 
   
